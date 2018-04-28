@@ -18,7 +18,7 @@ class MoviesList extends PureComponent {
 				movies: movies.results
 			});
 		} catch (err) {
-			console.log(err);
+			console.log(`MovieList Error" ${err}`);
 		}
 	}
 

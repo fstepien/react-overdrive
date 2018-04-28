@@ -6,12 +6,12 @@ import Overdrive from 'react-overdrive';
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
-class MoviesDetail extends Component {
+class MovieDetail extends Component {
 	state = {
-		movie: []
+		movie: {}
 	};
 
-	async componentWillMount() {
+	async componentDidMount() {
 		try {
 			const res = await fetch(
 				`https://api.themoviedb.org/3/movie/${
@@ -23,7 +23,7 @@ class MoviesDetail extends Component {
 				movie
 			});
 		} catch (err) {
-			console.log(err);
+			console.log(`MovieDetail Error" ${err}`);
 		}
 	}
 
@@ -52,7 +52,7 @@ class MoviesDetail extends Component {
 	}
 }
 
-export default MoviesDetail;
+export default MovieDetail;
 
 const MovieWrapper = styled.div`
 	position: relative;
