@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import Overdrive from 'react-overdrive';
+import { Link } from 'react-router-dom';
+import left from './caret-square-left.svg';
 
 class References extends Component {
 	render() {
@@ -83,6 +84,14 @@ class References extends Component {
 						</li>
 					</ul>
 				</section>
+				<Link to={'/MDB'}>
+					<img
+						src={left}
+						onClick={this.nextSlide}
+						className="arrow-previous arrow"
+						alt="left arrow icon"
+					/>
+				</Link>
 			</React.Fragment>
 		);
 	}

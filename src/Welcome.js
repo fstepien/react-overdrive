@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-// import Overdrive from 'react-overdrive';
+import { Link } from 'react-router-dom';
+import right from './caret-square-right.svg';
 
 class Welcome extends Component {
 	render() {
@@ -7,8 +8,17 @@ class Welcome extends Component {
 			<React.Fragment>
 				<section className="slide welcome">
 					<h2>react-overdrive</h2>
-					<p>Super easy magic-move transitions for React apps.</p>
+					<p>super easy magic-move transitions for React apps.</p>{' '}
 				</section>
+
+				<Link to={'/Animations'}>
+					<img
+						src={right}
+						onClick={this.nextSlide}
+						className="arrow-next arrow"
+						alt="left arrow icon"
+					/>
+				</Link>
 			</React.Fragment>
 		);
 	}

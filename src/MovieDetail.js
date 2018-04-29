@@ -3,6 +3,8 @@ import styled from 'styled-components';
 import { Poster } from './Movie';
 import Overdrive from 'react-overdrive';
 import { Link } from 'react-router-dom';
+import left from './caret-square-left.svg';
+import right from './caret-square-right.svg';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
@@ -50,6 +52,20 @@ class MovieDetail extends Component {
 						<p>{movie.overview}</p>
 					</div>
 				</MovieInfo>
+				<img
+					src={left}
+					className="arrow-previous arrow"
+					onClick={this.previousSlide}
+					alt="left arrow icon"
+				/>{' '}
+				<Link to={`/References`}>
+					<img
+						src={right}
+						onClick={this.nextSlide}
+						className="arrow-next arrow"
+						alt="left arrow icon"
+					/>
+				</Link>
 			</MovieWrapper>
 		);
 	}
@@ -62,6 +78,7 @@ const MovieWrapper = styled.div`
 	padding-top: 50vh;
 	background: url(${props => props.backdrop}) no-repeat;
 	background-size: cover;
+	height: calc(100vh - 100px);
 `;
 
 const MovieInfo = styled.div`
