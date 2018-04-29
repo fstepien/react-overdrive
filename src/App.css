@@ -8,6 +8,28 @@
   padding: 20px;
   color: white;
 }
+.App-header-list {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.App-header-list-item {
+  display: inline-block;
+}
+.App-header-list-item > a {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.App-header-list-item > a:hover {
+  border-bottom: 1px solid white;
+}
 
 .App-title {
   font-size: 1.5em;
@@ -17,3 +39,37 @@
   font-size: large;
 }
 
+.references,
+.slide {
+  position: relative;
+
+  width: 80%;
+  margin: 0 auto;
+  text-align: left;
+  padding-top: 10px;
+}
+.references h2,
+.slide h2 {
+  font-size: 4rem;
+  color: white;
+}
+.references ul {
+  padding: 0;
+  display: flex;
+  flex-flow: column nowrap;
+}
+.references li {
+  color: white;
+  display: inline-block;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  border: solid 3px white;
+  padding: 1rem;
+}
+.references a {
+  color: white;
+  text-decoration: none;
+}
+.references a:hover {
+  border-bottom: solid 1px white;
+}

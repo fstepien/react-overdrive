@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { Poster } from './Movie';
 import Overdrive from 'react-overdrive';
+import { Link } from 'react-router-dom';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
@@ -35,12 +36,14 @@ class MovieDetail extends Component {
 				alt={movie.title}
 			>
 				<MovieInfo>
-					<Overdrive id={`${movie.id}`}>
-						<Poster
-							src={`${POSTER_PATH}${movie.poster_path}`}
-							alt={movie.title}
-						/>
-					</Overdrive>
+					<Link to={`/MDB`}>
+						<Overdrive id={`${movie.id}`}>
+							<Poster
+								src={`${POSTER_PATH}${movie.poster_path}`}
+								alt={movie.title}
+							/>
+						</Overdrive>
+					</Link>
 					<div>
 						<h1>{movie.title}</h1>
 						<h3>{movie.release_date}</h3>
