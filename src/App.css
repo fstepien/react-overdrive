@@ -218,6 +218,7 @@ input::-moz-focus-inner {
 }
 .references h2,
 .slide h2 {
+  margin: 50px 0;
   font-size: 4rem;
   color: white;
 }
@@ -266,11 +267,73 @@ input::-moz-focus-inner {
 .arrow:active {
   filter: opacity(0.6);
 }
-.pack {
+.pack,
+.pack-css,
+.pack-css-top {
   position: absolute;
   right: -100px;
   bottom: 0;
   transform: rotate(330deg);
+}
+.pack-css {
+  animation: flyin 3s ease;
+}
+.pack-css-top {
+  animation: flyin-open 6s ease;
+}
+.pack-css-bottom {
+  z-index: 40;
+}
+@keyframes flyin {
+  0% {
+    right: 120%;
+    bottom: 120%;
+    transform: rotate(0deg);
+  }
+  50% {
+    right: 120%;
+    bottom: 120%;
+    transform: rotate(0deg);
+  }
+
+  100% {
+    right: -100px;
+    bottom: 0;
+    transform: rotate(330deg);
+  }
+}
+@keyframes flyin-open {
+  0% {
+    right: 120%;
+    bottom: 120%;
+    transform: rotate(0deg);
+  }
+  25% {
+    right: 120%;
+    bottom: 120%;
+    transform: rotate(0deg);
+  }
+
+  50% {
+    right: -100px;
+    bottom: 0;
+    transform: rotate(330deg);
+  }
+  70% {
+    right: -100px;
+    bottom: 0;
+    transform: rotate(330deg);
+  }
+  95% {
+    right: -100px;
+    bottom: 0;
+    transform: rotate(330deg) translateY(-60px);
+  }
+  100% {
+    right: -100px;
+    bottom: 0;
+    transform: rotate(330deg);
+  }
 }
 .react p {
   position: relative;
@@ -286,4 +349,48 @@ input::-moz-focus-inner {
   position: relative;
   top: -70px;
   z-index: 20;
+}
+.lock {
+  height: 80px;
+  position: absolute;
+  left: calc(50% - 30px);
+  top: 50px;
+  transform: rotate(30deg);
+  animation: unlock 6s ease;
+  z-index: 30;
+
+  /* height: 200px;
+  left: 73%;
+  top: 70%;
+  transform: rotate(0deg); */
+}
+@keyframes unlock {
+  0% {
+    height: 200px;
+    left: 73%;
+    top: 70%;
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+
+  70% {
+    height: 200px;
+    left: 73%;
+    top: 70%;
+    transform: rotate(0deg);
+    opacity: 0;
+  }
+  71% {
+    height: 200px;
+    left: 73%;
+    top: 70%;
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    left: calc(50% - 30px);
+    top: 50px;
+    transform: rotate(30deg);
+  }
 }
