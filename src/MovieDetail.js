@@ -39,7 +39,7 @@ class MovieDetail extends Component {
 			>
 				<MovieInfo>
 					<Link to={`/MDB`}>
-						<Overdrive id={`${movie.id}`}>
+						<Overdrive id={`${movie.id}`} animationDelay={2}>
 							<Poster
 								src={`${POSTER_PATH}${movie.poster_path}`}
 								alt={movie.title}

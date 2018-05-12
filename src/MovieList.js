@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import Movie from './Movie';
+import MovieContext from './MovieData';
+import MovieProvider from './MovieApi';
 
 class MoviesList extends PureComponent {
 	state = {
@@ -13,7 +15,7 @@ class MoviesList extends PureComponent {
 				'https://api.themoviedb.org/3/discover/movie?api_key=ab8356e075fc49f45bcecd2802a2c5dd&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1'
 			);
 			const movies = await res.json();
-			// console.log(movies)
+			// console.log(JSON.stringify(movies));
 			this.setState({
 				movies: movies.results
 			});
@@ -25,7 +27,20 @@ class MoviesList extends PureComponent {
 	render() {
 		return (
 			<MovieGrid>
-				{this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
+				<MovieProvider>
+					<MovieContext.Consumer>
+						{context => (
+							<p style={{ color: 'white' }}>
+								I'm inside {context.state.movie.total_pages}
+								{/* {context.state.movie.results.map(movie => (
+									<Movie key={movie.id} movie={movie} />
+								))} */}
+							</p>
+						)}
+					</MovieContext.Consumer>
+				</MovieProvider>
+
+				{/* {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)} */}
 			</MovieGrid>
 		);
 	}

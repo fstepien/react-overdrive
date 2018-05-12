@@ -394,3 +394,6 @@ input::-moz-focus-inner {
     transform: rotate(30deg);
   }
 }
+.know p {
+  line-height: 1.8;
+}
