@@ -13,7 +13,7 @@ class OverdriveFour extends Component {
 		return (
 			<React.Fragment>
 				<section className="slide react">
-					<h2>React-Overdrive</h2>
+					<h2>Why Overdrive?</h2>
 					<Overdrive id="overdrive-one">
 						<ImageStack>
 							<div>
@@ -28,14 +28,14 @@ class OverdriveFour extends Component {
 						</ImageStack>
 					</Overdrive>
 				</section>
-				<Link to={'/OverdriveTwo'}>
+				<Link to={'/OverdriveFive'}>
 					<img
 						src={left}
 						className="arrow-previous arrow"
 						alt="left arrow icon"
 					/>
 				</Link>
-				<Link to="/OverdriveFive">
+				<Link to="/MDB">
 					<img src={right} className="arrow-next arrow" alt="left arrow icon" />
 				</Link>
 			</React.Fragment>

@@ -11,7 +11,7 @@ class React3D extends Component {
 		return (
 			<React.Fragment>
 				<section className="slide react">
-					<h2>React</h2>
+					<h2>REACT</h2>
 					<p>
 						Components let you split the UI into independent, reusable pieces,
 						and think about each piece in isolation.

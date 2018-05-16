@@ -31,7 +31,7 @@ class MoviesList extends PureComponent {
 					<MovieContext.Consumer>
 						{context => (
 							<p style={{ color: 'white' }}>
-								I'm inside {context.state.movie.total_pages}
+								{/* I'm inside {context.state.movie.total_pages} */}
 								{/* {context.state.movie.results.map(movie => (
 									<Movie key={movie.id} movie={movie} />
 								))} */}
@@ -40,7 +40,7 @@ class MoviesList extends PureComponent {
 					</MovieContext.Consumer>
 				</MovieProvider>
 
-				{/* {this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)} */}
+				{this.state.movies.map(movie => <Movie key={movie.id} movie={movie} />)}
 			</MovieGrid>
 		);
 	}

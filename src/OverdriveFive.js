@@ -11,13 +11,12 @@ class OverdriveFive extends Component {
 		return (
 			<React.Fragment>
 				<section className="slide react">
-					<h2>React-Overdrive</h2>
-
-					<div className="image">
-						<Overdrive id="overdrive-one" duration={1000} animationDelay={100}>
+					<h2>Overdrive Properties</h2>
+					<Overdrive id="overdrive-one" duration={1000} animationDelay={100}>
+						<CenterImage>
 							<img src={overdrive} alt="overdrive code" />
-						</Overdrive>
-					</div>
+						</CenterImage>
+					</Overdrive>
 				</section>
 				<Link to={'/OverdriveFour'}>
 					<img
@@ -26,7 +25,7 @@ class OverdriveFive extends Component {
 						alt="left arrow icon"
 					/>
 				</Link>
-				<Link to="/OverdriveSix">
+				<Link to="/Why">
 					<img src={right} className="arrow-next arrow" alt="left arrow icon" />
 				</Link>
 			</React.Fragment>
@@ -36,13 +35,11 @@ class OverdriveFive extends Component {
 
 export default OverdriveFive;
 
-const OverdriveDiv = styled.div`
-	background: white;
-	width: 400px;
-	height: 200px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 40px;
-	float: right;
+const CenterImage = styled.div`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translateX(-50%) translateY(-50%);
+	border: solid 3px white;
+	padding: 30px;
 `;
