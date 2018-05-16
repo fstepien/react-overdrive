@@ -55,6 +55,27 @@ class References extends Component {
 						</li>
 						<li>
 							<a
+								href="https://material.io/design/motion/#principles"
+								rel="noopener noreferrer"
+								target="_blank"
+							>
+								{' '}
+								Material Design - Understanding Motion{' '}
+							</a>
+							<div style={{ fontSize: '2rem' }}>
+								by Google Material Design
+								<a
+									href="https://twitter.com/materialdesign"
+									rel="noopener noreferrer"
+									target="_blank"
+								>
+									{' '}
+									@materialdesign{' '}
+								</a>
+							</div>
+						</li>
+						<li>
+							<a
 								href="http://overdrive.filipstepien.com"
 								rel="noopener noreferrer"
 								target="_blank"

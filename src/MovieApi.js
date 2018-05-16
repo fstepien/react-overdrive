@@ -25,7 +25,7 @@ class MovieProvider extends Component {
 	render() {
 		return (
 			<MovieContext.Provider value={{ state: this.state }}>
-				{this.props.children}
+				{context => console.log(context, 'MVAPI')}
 			</MovieContext.Provider>
 		);
 	}

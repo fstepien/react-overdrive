@@ -4,28 +4,40 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import left from './caret-square-left.svg';
 import right from './caret-square-right.svg';
-import install from './use-install.png';
-import useimport from './use-import.png';
-import apply from './use-apply.png';
+import material1 from './material1.gif';
+import material2 from './material2.gif';
+import material3 from './material3.gif';
 
 class OverdriveFour extends Component {
 	render() {
 		return (
 			<React.Fragment>
 				<section className="slide react">
-					<h2>Why Overdrive?</h2>
+					<h2>MATERIAL DESIGN</h2>
+
+					<MatP>
+						Motion guides user attention in a smooth, unbroken fashion.
+					</MatP>
+					<MatP>
+						Motion helps orient users by showing how elements are related.
+					</MatP>
+					<MatP>
+						Motion celebrates moments in user journeys, adds character to common
+						interactions, and expresses a brand’s personality and style.
+					</MatP>
+
 					<Overdrive id="overdrive-one">
-						<ImageStack>
+						<ImageH>
 							<div>
-								<img src={install} alt="" />
+								<Image src={material1} alt="" />
 							</div>
-							<ImageNotAligned>
-								<img src={useimport} alt="" />
-							</ImageNotAligned>
+
+							<Image src={material2} alt="" />
+
 							<div>
-								<img src={apply} alt="" />
+								<Image src={material3} alt="" />
 							</div>
-						</ImageStack>
+						</ImageH>
 					</Overdrive>
 				</section>
 				<Link to={'/OverdriveFive'}>
@@ -45,26 +57,19 @@ class OverdriveFour extends Component {
 
 export default OverdriveFour;
 
-const OverdriveDiv = styled.div`
-	background: white;
-	width: 400px;
-	height: 200px;
+const ImageH = styled.div`
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 40px;
-	float: right;
-`;
-
-const ImageStack = styled.div`
-	display: flex;
-	flex-flow: column nowrap;
-	justify-content: left;
+	flex-flow: row nowrap;
+	justify-content: space-between;
 	border: solid 3px white;
 	padding: 20px;
-	max-width: 500px;
+	width: 100%;
 `;
 
-const ImageNotAligned = styled.div`
-	padding-left: 10px;
+const Image = styled.img`
+	height: 300px;
+`;
+
+const MatP = styled.p`
+	margin-bottom: 1.5rem !important;
 `;

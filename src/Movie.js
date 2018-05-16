@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
 import Overdrive from 'react-overdrive';
 
 const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 
-const Movie = ({ movie }) => (
+const Movie = ({ movie, toggleView }) => (
 	<div>
-		<Link to={`MDB/${movie.id}`}>
-			<Overdrive id={`${movie.id}`} animationDelay={0.5}>
-				<Poster src={`${POSTER_PATH}${movie.poster_path}`} alt={movie.title} />
-			</Overdrive>
-		</Link>
+		{/* <Link to={`MDB/${movie.id}`}> */}
+		<Overdrive id={`${movie.id}`} duration={500} animationDelay={200}>
+			<Poster
+				src={`${POSTER_PATH}${movie.poster_path}`}
+				alt={movie.title}
+				onClick={() => toggleView(movie.id)}
+			/>
+		</Overdrive>
+		{/* </Link> */}
 	</div>
 );
 

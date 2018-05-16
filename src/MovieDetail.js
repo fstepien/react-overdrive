@@ -10,63 +10,43 @@ const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const BACKDROP_PATH = 'http://image.tmdb.org/t/p/w1280';
 
 class MovieDetail extends Component {
-	state = {
-		movie: {}
-	};
-
-	async componentDidMount() {
-		try {
-			const res = await fetch(
-				`https://api.themoviedb.org/3/movie/${
-					this.props.match.params.id
-				}?api_key=ab8356e075fc49f45bcecd2802a2c5dd`
-			);
-			const movie = await res.json();
-			this.setState({
-				movie
-			});
-		} catch (err) {
-			console.log(`MovieDetail Error" ${err}`);
-		}
-	}
-
 	render() {
-		const { movie } = this.state;
+		const { movieId, movies } = this.props;
+
+		const movieIndex = movies.findIndex(movie => movie.id === movieId);
+
+		let movie = movies[movieIndex];
+
 		return (
-			<MovieWrapper
-				backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}
-				alt={movie.title}
-			>
-				<MovieInfo>
-					<Link to={`/MDB`}>
-						<Overdrive id={`${movie.id}`} animationDelay={2}>
+			<React.Fragment>
+				<MovieWrapper backdrop={`${BACKDROP_PATH}${movie.backdrop_path}`}>
+					<MovieInfo>
+						<Overdrive id={`${movie.id}`} animationDelay={200}>
 							<Poster
 								src={`${POSTER_PATH}${movie.poster_path}`}
 								alt={movie.title}
+								onClick={() => this.props.toggleView(movie.id)}
 							/>
 						</Overdrive>
-					</Link>
-					<div>
-						<h1>{movie.title}</h1>
-						<h3>{movie.release_date}</h3>
-						<p>{movie.overview}</p>
-					</div>
-				</MovieInfo>
-				<img
-					src={left}
-					className="arrow-previous arrow"
-					onClick={this.previousSlide}
-					alt="left arrow icon"
-				/>{' '}
-				<Link to={`/References`}>
+
+						<div>
+							<h1>{movie.title}</h1>
+							<h3>{movie.release_date}</h3>
+							<p>{movie.overview}</p>
+						</div>
+					</MovieInfo>
+				</MovieWrapper>
+				<Link to={'/Material'}>
 					<img
-						src={right}
-						onClick={this.nextSlide}
-						className="arrow-next arrow"
+						src={left}
+						className="arrow-previous arrow"
 						alt="left arrow icon"
 					/>
 				</Link>
-			</MovieWrapper>
+				<Link to="/References">
+					<img src={right} className="arrow-next arrow" alt="left arrow icon" />
+				</Link>
+			</React.Fragment>
 		);
 	}
 }

@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import left from './caret-square-left.svg';
 import right from './caret-square-right.svg';
-import pack from './pack.png';
-import reactImage2 from './React2.png';
 
 class OverdriveThree extends Component {
 	render() {

@@ -45,17 +45,6 @@ class OverdriveFour extends Component {
 
 export default OverdriveFour;
 
-const OverdriveDiv = styled.div`
-	background: white;
-	width: 400px;
-	height: 200px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 40px;
-	float: right;
-`;
-
 const ImageStack = styled.div`
 	display: flex;
 	flex-flow: column nowrap;

@@ -16,7 +16,7 @@ import OverdriveTwo from './OverdriveTwo';
 import OverdriveThree from './OverdriveThree';
 import OverdriveFour from './OverdriveFour';
 import OverdriveFive from './OverdriveFive';
-import Why from './Why';
+import Material from './Material';
 
 class App extends Component {
 	render() {
@@ -53,7 +53,7 @@ class App extends Component {
 								<Link to="/OverdriveFive">09.Slow</Link>
 							</li>
 							<li className="App-header-list-item">
-								<Link to="/Why">10.Why</Link>
+								<Link to="/Material">10.Material</Link>
 							</li>
 							<li className="App-header-list-item">
 								<Link to="/MDB">11.MDB</Link>
@@ -74,7 +74,7 @@ class App extends Component {
 							<Route exact path="/OverdriveThree" component={OverdriveThree} />
 							<Route exact path="/OverdriveFour" component={OverdriveFour} />
 							<Route exact path="/OverdriveFive" component={OverdriveFive} />
-							<Route exact path="/Why" component={Why} />
+							<Route exact path="/Material" component={Material} />
 							<Route exact path="/MDB" component={MovieList} />
 							<Route path="/MDB/:id" component={MovieDetail} />
 							<Route path="/References" component={References} />

@@ -25,7 +25,7 @@ class OverdriveFive extends Component {
 						alt="left arrow icon"
 					/>
 				</Link>
-				<Link to="/Why">
+				<Link to="/Material">
 					<img src={right} className="arrow-next arrow" alt="left arrow icon" />
 				</Link>
 			</React.Fragment>

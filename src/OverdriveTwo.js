@@ -4,7 +4,6 @@ import Overdrive from 'react-overdrive';
 import { Link } from 'react-router-dom';
 import left from './caret-square-left.svg';
 import right from './caret-square-right.svg';
-import pack from './pack.png';
 import reactImage2 from './React2.png';
 
 class OverdriveTwo extends Component {
