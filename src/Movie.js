@@ -8,7 +8,7 @@ const POSTER_PATH = 'http://image.tmdb.org/t/p/w154';
 const Movie = ({ movie, toggleView }) => (
 	<div>
 		{/* <Link to={`MDB/${movie.id}`}> */}
-		<Overdrive id={`${movie.id}`} duration={500} animationDelay={200}>
+		<Overdrive id={`${movie.id}`} duration={500} animationDelay={150}>
 			<Poster
 				src={`${POSTER_PATH}${movie.poster_path}`}
 				alt={movie.title}
